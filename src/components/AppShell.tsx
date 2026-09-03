@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import stadium from "@/assets/stadium-night.jpg";
+import stadiumNight from "@/assets/stadium-night.jpg";
+import stadiumDay from "@/assets/stadium-day.jpg";
 
 /**
  * Full-bleed stadium backdrop with a fixed veil + pitch grid.
@@ -9,19 +10,23 @@ import stadium from "@/assets/stadium-night.jpg";
 export function AppShell({
   children,
   className = "",
+  light = false,
 }: {
   children: ReactNode;
   className?: string;
+  light?: boolean;
 }) {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-background">
+    <div
+      className={`relative min-h-screen w-full overflow-hidden bg-background ${light ? "theme-light" : ""}`}
+    >
       {/* layer 0 — photograph */}
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${stadium})` }}
+        style={{ backgroundImage: `url(${light ? stadiumDay : stadiumNight})` }}
       />
-      {/* layer 1 — darkening veil so content stays legible */}
+      {/* layer 1 — veil so content stays legible */}
       <div aria-hidden className="veil pointer-events-none fixed inset-0" />
       {/* layer 2 — pitch grid texture */}
       <div aria-hidden className="grid-lines pointer-events-none fixed inset-0 opacity-60" />

@@ -84,9 +84,9 @@
   --gradient-pitch: linear-gradient(150deg, oklch(0.48 0.12 158), oklch(0.3 0.06 165));
   --gradient-veil: linear-gradient(
     180deg,
-    oklch(0.14 0.02 165 / 62%) 0%,
-    oklch(0.14 0.02 165 / 84%) 55%,
-    oklch(0.12 0.018 165 / 96%) 100%
+    oklch(0.14 0.02 165 / 42%) 0%,
+    oklch(0.14 0.02 165 / 68%) 55%,
+    oklch(0.12 0.018 165 / 88%) 100%
   );
   --shadow-lift: 0 18px 40px -22px oklch(0.05 0.02 165 / 90%);
   --shadow-volt: 0 14px 34px -16px oklch(0.91 0.19 122 / 45%);
